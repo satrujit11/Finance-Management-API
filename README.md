@@ -23,22 +23,26 @@ To get started, follow these instructions to set up and run the Finance Manageme
    ```sh
    git clone https://github.com/your-username/finance-management-rails-api.git
    ```
-
 2. Navigate to the project directory:
 
+   ```bash
    `cd finance-management-rails-api`
-
+   ```
 3. Install dependencies:
 
-   `bundle install`
-
+   ```bash
+   bundle install
+   ```
 4. Set up the database:
 
-   `rails db:create db:migrate`
-
+   ```bash
+   rails db:create db:migrate
+   ```
 5. Start the Rails server:
 
-   `rails s`
+   ```bash
+   rails s
+   ```
 
 Now the API should be up and running at `http://localhost:3000`.
 
