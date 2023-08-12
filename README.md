@@ -1,24 +1,53 @@
-# README
+# FINANCE MANAGEMENT RAILS API
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Welcome to the Finance Management Rails API! This API provides functionality to manage income data for personal finance management..
 
-Things you may want to cover:
+## Table of Contents
 
-* Ruby version
+- [Getting Started](#getting-started)
+- [API Endpoints](#api-endpoints)
 
-* System dependencies
+## Getting Started
 
-* Configuration
+To get started, follow these instructions to set up and run the Finance Management Rails API locally.
 
-* Database creation
+### Prerequisites
 
-* Database initialization
+- Ruby: >= 3.2.0
+- Rails: >= 7.0.0
 
-* How to run the test suite
+### Installation
 
-* Services (job queues, cache servers, search engines, etc.)
+1. Clone this repository:
 
-* Deployment instructions
+   ```sh
+   git clone https://github.com/your-username/finance-management-rails-api.git
+   ```
 
-* ...
+2. Navigate to the project directory:
+
+   `cd finance-management-rails-api`
+
+3. Install dependencies:
+
+   `bundle install`
+
+4. Set up the database:
+
+   `rails db:create db:migrate`
+
+5. Start the Rails server:
+
+   `rails s`
+
+Now the API should be up and running at `http://localhost:3000`.
+
+## API Endpoints
+
+The following endpoints are available for managing income data:
+
+- `GET /api/v1/incomes`: Get a list of all incomes.
+- `GET /api/v1/incomes/:id`: Get details of a specific income.
+- `POST /api/v1/incomes`: Create a new income.
+- `PUT /api/v1/incomes/:id`: Update an existing income.
+- `DELETE /api/v1/incomes/:id`: Delete an income..
