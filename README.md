@@ -21,7 +21,7 @@ To get started, follow these instructions to set up and run the Finance Manageme
 1. Clone this repository:
 
    ```sh
-   git clone https://github.com/your-username/finance-management-rails-api.git
+   git clone https://github.com/satrujit11/Finance-Management-API.git
    ```
 2. Navigate to the project directory:
 
