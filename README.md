@@ -26,7 +26,7 @@ To get started, follow these instructions to set up and run the Finance Manageme
 2. Navigate to the project directory:
 
    ```bash
-   `cd finance-management-rails-api`
+   cd Finance-Management-API
    ```
 3. Install dependencies:
 
