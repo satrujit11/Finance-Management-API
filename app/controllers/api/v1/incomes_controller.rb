@@ -3,6 +3,11 @@
 module Api
   module V1
     class IncomesController < ApplicationController
+      def index_all
+          incomes = Income.all
+          render json: incomes, status: 200
+      end
+
       def index
         incomes = Income.where(user_id: params[:user_id])
         income_data = incomes.map { |income| generate_api_end_point(income) }
@@ -24,7 +29,7 @@ module Api
         if income.save
           render json: 'New income is created', status: 200
         else
-          render json: { error: 'Income creation is failed' }
+          render json: { error: 'Income creation failed' }
         end
       end
 
@@ -57,17 +62,18 @@ module Api
       private
 
       def income_params
-        params.require(:income).permit(:amount, :source, :user_id)
+        params.require(:income).permit(:amount, :source, :user_id, :income_type)
       end
 
       def update_params
-        params.require(:income).permit(:amount, :source)
+        params.require(:income).permit(:amount, :source, :income_type)
       end
 
       def generate_api_end_point(income)
         {
           "amount": income.amount,
           "source": income.source,
+          "income_type": income.income_type,
           "date": income.created_at.strftime('%Y-%m-%d'),
           "time": income.created_at.strftime('%I:%M%p')
         }

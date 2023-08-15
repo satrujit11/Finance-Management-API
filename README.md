@@ -54,8 +54,15 @@ Now the API should be up and running at `http://localhost:3000`.
 
 The following endpoints are available for managing income data:
 
-- `GET /api/v1/incomes?user_id=<specific_user_id>`: Get a list of all incomes.
-- `GET /api/v1/incomes/:id?user_id=<specific_user_id>`: Get details of a specific income.
-- `POST /api/v1/incomes`: Create a new income.
-- `PUT /api/v1/incomes/:id?user_id=<specific_user_id>`: Update an existing income.
-- `DELETE /api/v1/incomes/:id?user_id=<specific_user_id>`: Delete an income..
+| Controller | Method | API EndPoints                                     | Note                              |
+| ---------- | ------ | ------------------------------------------------- | --------------------------------- |
+| Income     | GET    | `/api/v1/incomes?user_id=<specific_user_id>`      | Get a list of all incomes         |
+|            | GET    | `/api/v1/incomes/:id?user_id=<specific_user_id>`  | Get details of a specific income  |
+|            | POST   | `/api/v1/incomes`                                 | Create a new income               |
+|            | PUT    | `/api/v1/incomes/:id?user_id=<specific_user_id>`  | Update an existing income         |
+|            | DELETE | `/api/v1/incomes/:id?user_id=<specific_user_id>`  | Delete an income                  |
+| Expense    | GET    | `/api/v1/expenses?user_id=<specific_user_id>`     | Get a list of all expenses        |
+|            | GET    | `/api/v1/expenses/:id?user_id=<specific_user_id>` | Get details of a specific expense |
+|            | POST   | `/api/v1/expenses`                                | Create a new expense              |
+|            | PUT    | `/api/v1/expenses/:id?user_id=<specific_user_id>` | Update an existing expense        |
+|            | DELETE | `/api/v1/expenses/:id?user_id=<specific_user_id>` | Delete an expense                 |
