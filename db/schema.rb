@@ -1,3 +1,5 @@
+# rubocpp
+
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -10,24 +12,38 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_08_15_132504) do
-  create_table "expenses", force: :cascade do |t|
-    t.float "amount"
-    t.string "expense_type"
-    t.string "medium"
-    t.string "medium_name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer "user_id"
+ActiveRecord::Schema[7.0].define(version: 20_230_816_104_726) do
+  create_table 'expenses', force: :cascade do |t|
+    t.float 'amount', default: 0.0, null: false
+    t.string 'expense_type'
+    t.string 'medium'
+    t.string 'medium_name'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+    t.integer 'user_id'
+    t.check_constraint 'amount >= 0'
   end
 
-  create_table "incomes", force: :cascade do |t|
-    t.float "amount"
-    t.string "source"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer "user_id"
-    t.string "income_type"
+  create_table 'incomes', force: :cascade do |t|
+    t.float 'amount', default: 0.0, null: false
+    t.string 'source'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+    t.integer 'user_id'
+    t.string 'income_type'
+    t.check_constraint 'amount >= 0'
   end
 
+  create_table 'lendings', force: :cascade do |t|
+    t.float 'amount', default: 0.0, null: false
+    t.string 'person'
+    t.boolean 'repayment', default: false
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+    t.integer 'user_id'
+    t.date 'lending_date'
+    t.date 'expected_repayment_date'
+    t.date 'repayment_date'
+    t.check_constraint 'amount >= 0'
+  end
 end
