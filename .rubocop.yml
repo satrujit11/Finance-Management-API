@@ -4,3 +4,4 @@ Style/Documentation:
 AllCops:
   Exclude:
     - "bin/**/**"
+    - "db/**/**"

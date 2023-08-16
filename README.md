@@ -54,15 +54,21 @@ Now the API should be up and running at `http://localhost:3000`.
 
 The following endpoints are available for managing income data:
 
-| Controller | Method | API EndPoints                                     | Note                              |
-| ---------- | ------ | ------------------------------------------------- | --------------------------------- |
-| Income     | GET    | `/api/v1/incomes?user_id=<specific_user_id>`      | Get a list of all incomes         |
-|            | GET    | `/api/v1/incomes/:id?user_id=<specific_user_id>`  | Get details of a specific income  |
-|            | POST   | `/api/v1/incomes`                                 | Create a new income               |
-|            | PUT    | `/api/v1/incomes/:id?user_id=<specific_user_id>`  | Update an existing income         |
-|            | DELETE | `/api/v1/incomes/:id?user_id=<specific_user_id>`  | Delete an income                  |
-| Expense    | GET    | `/api/v1/expenses?user_id=<specific_user_id>`     | Get a list of all expenses        |
-|            | GET    | `/api/v1/expenses/:id?user_id=<specific_user_id>` | Get details of a specific expense |
-|            | POST   | `/api/v1/expenses`                                | Create a new expense              |
-|            | PUT    | `/api/v1/expenses/:id?user_id=<specific_user_id>` | Update an existing expense        |
-|            | DELETE | `/api/v1/expenses/:id?user_id=<specific_user_id>` | Delete an expense                 |
+| Controller | Method | API EndPoints                                              | Note                              |
+| ---------- | ------ | ---------------------------------------------------------- | --------------------------------- |
+| Income     | GET    | `/api/v1/incomes?user_id=<specific_user_id>`               | Get a list of all incomes         |
+|            | GET    | `/api/v1/incomes/:id?user_id=<specific_user_id>`           | Get details of a specific income  |
+|            | POST   | `/api/v1/incomes`                                          | Create a new income               |
+|            | PUT    | `/api/v1/incomes/:id?user_id=<specific_user_id>`           | Update an existing income         |
+|            | DELETE | `/api/v1/incomes/:id?user_id=<specific_user_id>`           | Delete an income                  |
+| Expense    | GET    | `/api/v1/expenses?user_id=<specific_user_id>`              | Get a list of all expenses        |
+|            | GET    | `/api/v1/expenses/:id?user_id=<specific_user_id>`          | Get details of a specific expense |
+|            | POST   | `/api/v1/expenses`                                         | Create a new expense              |
+|            | PUT    | `/api/v1/expenses/:id?user_id=<specific_user_id>`          | Update an existing expense        |
+|            | DELETE | `/api/v1/expenses/:id?user_id=<specific_user_id>`          | Delete an expense                 |
+| Lending    | GET    | `/api/v1/lendings?user_id=<specific_user_id>`              | Get a list of all lendings        |
+|            | GET    | `/api/v1/lendings/:id?user_id=<specific_user_id>`          | Get details of a specific lending |
+|            | POST   | `/api/v1/lendings`                                         | Create a new lending              |
+|            | PUT    | `/api/v1/lendings/:id?user_id=<specific_user_id>`          | Update an existing lending        |
+|            | PUT    | `/api/v1/lendings/:id/complete?user_id=<specific_user_id>` | Close or reopen an lending        |
+|            | DELETE | `/api/v1/lendings/:id?user_id=<specific_user_id>`          | Delete an lending                 |

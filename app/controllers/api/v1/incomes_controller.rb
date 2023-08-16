@@ -4,14 +4,18 @@ module Api
   module V1
     class IncomesController < ApplicationController
       def index_all
-          incomes = Income.all
-          render json: incomes, status: 200
+        incomes = Income.all
+        render json: incomes, status: 200
       end
 
       def index
         incomes = Income.where(user_id: params[:user_id])
-        income_data = incomes.map { |income| generate_api_end_point(income) }
-        render json: income_data, status: 200
+        if incomes.empty?
+          render json: { error: 'No income found' }
+        else
+          income_data = incomes.map { |income| generate_api_end_point(income) }
+          render json: income_data, status: 200
+        end
       end
 
       def show

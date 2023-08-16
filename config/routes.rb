@@ -3,7 +3,16 @@
 Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
-      resources :expenses
+      resources :lendings do
+        member do
+          put :complete
+        end
+      end
+      resources :expenses do
+        collection do
+          get :index_all
+        end
+      end
       resources :incomes do
         collection do
           get :index_all

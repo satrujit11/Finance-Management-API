@@ -1,11 +1,21 @@
+# frozen_string_literal: true
 
 module Api
   module V1
     class ExpensesController < ApplicationController
+      def index_all
+        expenses = Expense.all
+        render json: expenses, status: 200
+      end
+
       def index
         expenses = Expense.where(user_id: params[:user_id])
-        expense_data = expenses.map {|expense| generate_api_end_point(expense)}
-        render json: expense_data, status: 200
+        if expenses.empty?
+          render json: { error: 'No expense found' }
+        else
+          expense_data = expenses.map { |expense| generate_api_end_point(expense) }
+          render json: expense_data, status: 200
+        end
       end
 
       def show
@@ -14,7 +24,7 @@ module Api
           expense_data = generate_api_end_point(expense)
           render json: expense_data, status: 200
         else
-          render json: { error: 'No expense found'}
+          render json: { error: 'No expense found' }
         end
       end
 
@@ -31,12 +41,12 @@ module Api
         expense = Expense.find_by(id: params[:id], user_id: params[:user_id])
         if expense
           if expense.update(update_params)
-          render json: 'Expense is updated', status: 200
+            render json: 'Expense is updated', status: 200
           else
-            render json: { error: 'Expense update failed'}
+            render json: { error: 'Expense update failed' }
           end
         else
-            render json: { error: 'Expense not found'}
+          render json: { error: 'Expense not found' }
         end
       end
 
@@ -46,10 +56,10 @@ module Api
           if expense.destroy
             render json: 'Expense is deleted', status: 200
           else
-            render json: {error: 'Expense deletion failed'}
+            render json: { error: 'Expense deletion failed' }
           end
         else
-            render json: { error: 'Expense not found'}
+          render json: { error: 'Expense not found' }
         end
       end
 
